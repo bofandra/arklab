@@ -15,9 +15,9 @@ export default function DemoPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setStatus("Mengirim...");
     setTimeout(() => {
-      setStatus("Message sent successfully!");
+      setStatus("Pesan berhasil dikirim!");
       setFormData({ name: "", email: "", message: "" });
     }, 1500);
   };
@@ -31,10 +31,10 @@ export default function DemoPage() {
           transition={{ duration: 1 }}
           className="text-4xl font-bold mb-4"
         >
-          Product Showcases
+          Layanan Unggulan Kami
         </motion.h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3].map((i) => (
+          {["Web App", "Mobile App", "AI & Otomasi"].map((feature, i) => (
             <motion.div
               key={i}
               whileHover={{ scale: 1.05 }}
@@ -43,11 +43,11 @@ export default function DemoPage() {
               <Card className="bg-white/5 border border-white/10">
                 <CardContent className="p-4">
                   <img
-                    src={`/images/showcase${i}.jpg`}
-                    alt={`Showcase ${i}`}
+                    src={`/images/arklab${i + 1}.jpg`}
+                    alt={feature}
                     className="rounded-lg mb-2"
                   />
-                  <p className="text-sm text-slate-300">Feature highlight description {i}</p>
+                  <p className="text-sm text-slate-300">Solusi {feature} yang cepat dan andal.</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -62,10 +62,10 @@ export default function DemoPage() {
           transition={{ duration: 1 }}
           className="text-3xl font-semibold mb-4"
         >
-          Meet Our Team
+          Tim Profesional Kami
         </motion.h2>
         <div className="flex flex-wrap justify-center gap-6">
-          {["Jaisyullah", "Irsyad Purbha ", "Regi Wahono"].map((name, index) => (
+          {["Fahmi Rahman", "Dewi Anjani", "Rizal Hakim"].map((name, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
@@ -74,12 +74,12 @@ export default function DemoPage() {
               <Card className="bg-white/5 border border-white/10 w-60">
                 <CardContent className="p-4 text-center">
                   <img
-                    src={`/images/team${index + 1}.png`}
+                    src={`/images/team${index + 1}.jpg`}
                     alt={name}
                     className="rounded-full w-24 h-24 mx-auto mb-2"
                   />
                   <h3 className="text-lg font-medium mb-1">{name}</h3>
-                  <p className="text-slate-400 text-sm">Role or short bio</p>
+                  <p className="text-slate-400 text-sm">Spesialis Produk Digital</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -94,7 +94,7 @@ export default function DemoPage() {
           transition={{ duration: 1 }}
           className="text-3xl font-semibold mb-4"
         >
-          Request a Personalized Demo
+          Minta Demo Layanan Arklab
         </motion.h2>
         <motion.form
           onSubmit={handleSubmit}
@@ -105,7 +105,7 @@ export default function DemoPage() {
         >
           <Input
             name="name"
-            placeholder="Your Name"
+            placeholder="Nama Anda"
             required
             className="bg-slate-800 text-white"
             value={formData.name}
@@ -114,7 +114,7 @@ export default function DemoPage() {
           <Input
             type="email"
             name="email"
-            placeholder="Your Email"
+            placeholder="Email Anda"
             required
             className="bg-slate-800 text-white"
             value={formData.email}
@@ -122,7 +122,7 @@ export default function DemoPage() {
           />
           <Textarea
             name="message"
-            placeholder="Tell us what you're looking for..."
+            placeholder="Ceritakan kebutuhan digital Anda..."
             className="bg-slate-800 text-white"
             rows={5}
             value={formData.message}
@@ -133,7 +133,7 @@ export default function DemoPage() {
             className="bg-cyan-500 hover:bg-cyan-600 disabled:opacity-50"
             disabled={!formData.name || !formData.email || !formData.message}
           >
-            Send Request
+            Kirim Permintaan
           </Button>
           {status && <p className="text-slate-400 text-sm mt-2">{status}</p>}
         </motion.form>

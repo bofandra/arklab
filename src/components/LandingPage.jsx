@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
-import { Sparkles, HeartPulse, ShieldCheck, BrainCircuit } from "lucide-react";
+import { Sparkles, Smartphone, Brain, Workflow, ShoppingCart } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -24,8 +24,8 @@ export default function LandingPage() {
       </video>
 
       <header className="relative z-10 flex justify-between items-center px-10 py-6 border-b border-white/10">
-        <h1 className="text-3xl font-bold tracking-tight">NeoMed Systems</h1>
-        <Button className="bg-white text-black hover:bg-slate-100">Contact Us</Button>
+        <h1 className="text-3xl font-bold tracking-tight">Arklab</h1>
+        <Button className="bg-white text-black hover:bg-slate-100">Hubungi Kami</Button>
       </header>
 
       <section className="relative z-10 px-10 py-20 text-center max-w-4xl mx-auto">
@@ -35,37 +35,48 @@ export default function LandingPage() {
           transition={{ duration: 1 }}
           className="text-5xl font-extrabold tracking-wide mb-6 leading-tight bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text"
         >
-          Reimagining Hospital Information Systems
+          Solusi Digital Terpadu untuk Bisnis Modern
         </motion.h2>
         <p className="text-xl text-slate-300 mb-10">
-          Welcome to the future of healthcare operations—intelligent, intuitive, and inspired by the needs of hospitals and clinics. We build digital ecosystems that heal inefficiencies.
+          Arklab membantu Anda membangun aplikasi web, mobile, sistem AI, dan e-commerce
+          secara efisien dan terintegrasi. Ciptakan otomatisasi dan skalabilitas bisnis Anda bersama kami.
         </p>
         <Button
           onClick={handleDemoClick}
           className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 text-lg rounded-2xl shadow-xl"
         >
-          Request a Demo
+          Minta Demo
         </Button>
       </section>
 
-      <section className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-10 pb-20">
-        {[{
-          icon: <HeartPulse className="h-12 w-12" />,
-          title: "Patient-Centric Design",
-          text: "Every click brings you closer to better care. Interfaces built with empathy."
-        }, {
-          icon: <BrainCircuit className="h-12 w-12" />,
-          title: "AI-Driven Insights",
-          text: "Real-time analytics for proactive care decisions."
-        }, {
-          icon: <ShieldCheck className="h-12 w-12" />,
-          title: "Secure by Design",
-          text: "Top-tier data encryption and compliance with HIPAA and beyond."
-        }, {
-          icon: <Sparkles className="h-12 w-12" />,
-          title: "Modular Architecture",
-          text: "Scale effortlessly. Plug & play modules for every department."
-        }].map(({ icon, title, text }, i) => (
+      <section className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 px-10 pb-20">
+        {[
+          {
+            icon: <Smartphone className="h-12 w-12" />,
+            title: "Aplikasi Mobile",
+            text: "Bangun aplikasi iOS dan Android cepat, modern, dan intuitif."
+          },
+          {
+            icon: <Sparkles className="h-12 w-12" />,
+            title: "Website Dinamis",
+            text: "Tampilan profesional & performa tinggi untuk website bisnis Anda."
+          },
+          {
+            icon: <Brain className="h-12 w-12" />,
+            title: "Kecerdasan Buatan",
+            text: "Integrasikan AI untuk otomatisasi dan pengambilan keputusan cerdas."
+          },
+          {
+            icon: <Workflow className="h-12 w-12" />,
+            title: "Otomatisasi Proses",
+            text: "Tingkatkan efisiensi dengan alur kerja yang otomatis dan terukur."
+          },
+          {
+            icon: <ShoppingCart className="h-12 w-12" />,
+            title: "E-Commerce",
+            text: "Solusi toko online lengkap dari katalog hingga pembayaran."
+          }
+        ].map(({ icon, title, text }, i) => (
           <motion.div
             key={i}
             whileHover={{ scale: 1.1, rotateY: 5 }}
@@ -88,7 +99,7 @@ export default function LandingPage() {
       </div>
 
       <footer className="relative z-10 text-center text-slate-500 text-sm py-6 border-t border-white/10">
-        © 2025 NeoMed Systems. All rights reserved.
+        © 2025 Arklab. Seluruh hak cipta dilindungi.
       </footer>
     </div>
   );
