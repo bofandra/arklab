@@ -65,7 +65,11 @@ export default function DemoPage() {
           Tim Profesional Kami
         </motion.h2>
         <div className="flex flex-wrap justify-center gap-6">
-          {["Fahmi Rahman", "Dewi Anjani", "Rizal Hakim"].map((name, index) => (
+          {[
+            { name: "Ovi Shekh", role: "Co - Founder" },
+            { name: "Abir Ahammed", role: "Co - Founder" },
+            { name: "Bofandra Muhammad", role: "Indonesia Representative" }
+          ].map(({ name, role }, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
@@ -74,18 +78,17 @@ export default function DemoPage() {
               <Card className="bg-white/5 border border-white/10 w-60">
                 <CardContent className="p-4 text-center">
                   <img
-                    src={`/images/team${index + 1}.jpg`}
+                    src={`/images/team${index + 1}.png`}
                     alt={name}
                     className="rounded-full w-24 h-24 mx-auto mb-2"
                   />
                   <h3 className="text-lg font-medium mb-1">{name}</h3>
-                  <p className="text-slate-400 text-sm">Spesialis Produk Digital</p>
+                  <p className="text-slate-400 text-sm">{role}</p>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </div>
-      </section>
 
       <section className="max-w-3xl mx-auto text-center">
         <motion.h2

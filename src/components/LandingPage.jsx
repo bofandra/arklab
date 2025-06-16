@@ -25,7 +25,7 @@ export default function LandingPage() {
 
       <header className="relative z-10 flex justify-between items-center px-10 py-6 border-b border-white/10">
         <h1 className="text-3xl font-bold tracking-tight">Arklab</h1>
-        <Button className="bg-white text-black hover:bg-slate-100">Hubungi Kami</Button>
+        <Button onClick={handleDemoClick} className="bg-white text-black hover:bg-slate-100">Hubungi Kami</Button>
       </header>
 
       <section className="relative z-10 px-10 py-20 text-center max-w-4xl mx-auto">
