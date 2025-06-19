@@ -89,6 +89,7 @@ export default function DemoPage() {
             </motion.div>
           ))}
         </div>
+      </section>
 
       <section className="max-w-3xl mx-auto text-center">
         <motion.h2
